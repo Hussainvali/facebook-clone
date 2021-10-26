@@ -1,0 +1,55 @@
+<br><br>
+<div class="fb-header"><br><br>
+    <div class="card">
+        <div class="card-body text-center">
+            <p class="card-text">
+                <!-- <input type="text"  value="What's on your mind ?" readonly style="background-color: darkgrey;border-radius: 20%;font-size: 20px;width: 500px;cursor: pointer;"/> -->
+                <button type="button" (click)="openModal()" class="btn btn-info btn-lg" data-toggle="modal"
+                    data-target="#myModal">What's on your mind ?</button>
+            </p>
+        </div>
+    </div>
+
+
+</div>
+<div class="card" style="width:400px" *ngFor="let post of postList">
+    <div class="card-body">
+        <p class="card-text">{{post.description}}</p>
+        <p class="card-text">Location {{post.lat}} {{post.lng}}</p>
+    </div>
+    <p *ngFor="let index of post.images;index as i">
+        <img class="card-img-top" src="{{IMAGE_URI}}/{{index}}" alt="Card image" width="500" height="500" [ngStyle]="{'z-index':{i}}">
+    </p>
+    <hr><hr><hr>
+</div>
+<div class="row">
+    <modal #myModal>
+        <modal-header style="text-align: center;">
+            <h1>Create post</h1>
+        </modal-header>
+        <modal-content>
+            <form>
+                <textarea type="text" class="form-control input-style" placeholder="What's on your mind ?"
+                    style="border-radius: 0px;font-size: 20px;" id="description" [(ngModel)]="post.description"
+                    name="description" #description="ngModel"></textarea>
+                <input *ngIf="isUpload" type="file" class="form-control input-style" placeholder="Add to your post"
+                    style="border-radius: 0px;font-size: 20px;" (change)="selectFiles($event)" multiple="" id="images"
+                    [(ngModel)]="post.images" name="images" #images="ngModel">
+                <br><br><br><br><br><br><br><br>
+                <p class="form-control input-style" placeholder="Add to your post"
+                    style="border-radius: 0px;font-size: 20px;">Add to your post &nbsp;&nbsp;<i
+                        (click)="onClickImage()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-images" viewBox="0 0 16 16">
+                            <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+                            <path
+                                d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z" />
+                        </svg></i></p><br><br><br>
+                <button class="btn btn-primary" (click)="onSubmitpost()" style="width: 100%;">Post</button>
+            </form>
+        </modal-content>
+        <modal-footer>
+            <button class="btn btn-primary" (click)="closeModal()">close</button>
+        </modal-footer>
+    </modal>
+</div>`

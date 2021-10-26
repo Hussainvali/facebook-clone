@@ -9,19 +9,29 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FeedComponent } from './feed/feed.component';
+import { PostComponent } from './post/post.component';
+import { AgmCoreModule } from '@agm/core';
+import { ModalModule } from 'ngb-modal';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SidenavComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    FeedComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA8tFzcG9p-9dqfJCoF2u_3gquX1c9Esdk'
+    }),
+    ModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

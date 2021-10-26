@@ -4,10 +4,11 @@
 
 export const environment = {
   production: false,
-  loginUrl: 'http://localhost:2999/',
-  API_URL:'http://localhost:3000/jeeves/v1/propery/',
-  IMAGE_URI:'http://localhost:3000'
+  loginUrl: 'http://localhost:5000/',
+  API_URL:'http://localhost:5000/facebook/v1/',
+  IMAGE_URI:'http://localhost:5000'
 };
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

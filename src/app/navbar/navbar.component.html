@@ -10,17 +10,8 @@
                 </ul>
                
                 <ul class="nav hidden-xs" id="lg-menu">
-                    <li class="active"><a href="#featured"><i class="glyphicon glyphicon-list-alt"></i> Hussain</a></li>
-                    <li><a href="#stories"><i class="glyphicon glyphicon-list"></i> Stories</a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-paperclip"></i> Saved</a></li>
-                    <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>
-                </ul>
-                <!-- tiny only nav-->
-              <ul class="nav visible-xs" id="xs-menu">
-                    <li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-list-alt"></i></a></li>
-                    <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-list"></i></a></li>
-                    <li><a href="#" class="text-center"><i class="glyphicon glyphicon-paperclip"></i></a></li>
-                    <li><a href="#" class="text-center"><i class="glyphicon glyphicon-refresh"></i></a></li>
+                    <li class="active"><a routerLink="/user/feed"><i class="glyphicon glyphicon-list-alt"></i> Hussain</a></li>
+                    <li><a routerLink="/user/post"><i class="glyphicon glyphicon-list"></i> Posts</a></li>
                 </ul>
               
             </div>
@@ -38,7 +29,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                      <a href="http://usebootstrap.com/theme/facebook" class="navbar-brand logo">f</a>
+                      <a routerLink="/user/feed" class="navbar-brand logo">f</a>
                     </div>
                     <nav class="collapse navbar-collapse" role="navigation">
                     <form class="navbar-form navbar-left">
@@ -51,30 +42,33 @@
                     </form>
                     <ul class="nav navbar-nav">
                       <li>
-                        <a href="#"><i class="glyphicon glyphicon-home"></i> Home</a>
+                        <a routerLink="/user/feed"><i class="glyphicon glyphicon-home"></i> Home</a>
                       </li>
                       <li>
-                        <a href="#postModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i> Post</a>
+                        <a routerLink="/user/post" role="button" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i> Post</a>
                       </li>
                       <li>
-                        <a href="#"><span class="badge">badge</span></a>
-                      </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="">More</a></li>
-                          <li><a href="">More</a></li>
-                          <li><a href="">More</a></li>
-                          <li><a href="">More</a></li>
-                          <li><a href="">More</a></li>
-                        </ul>
+                        <button style="margin-top: 13px;margin-left: 500px;" (click)="onClickLogout()">Logout</button>
                       </li>
                     </ul>
                     </nav>
                 </div>
                 <!-- /top nav -->
+                <div class="padding">
+                  <div class="container">
+                      <div class="row">
+                        <div class="col-md-3">
+                          
+                        </div>
+                        <div class="col-md-6" style="background-color: white;">
+                          <router-outlet></router-outlet>
+                        </div>
+                        <div class="col-md-3">
+                          
+                        </div>
+                      </div>
+                  </div>
+                </div>
             </div>
             <!-- /main -->
           

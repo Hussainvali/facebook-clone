@@ -1,0 +1,11 @@
+<br><br><br>
+<div class="card" style="width:400px" *ngFor="let post of postList">
+    <div class="card-body">
+        <p class="card-text">{{post.description}}</p>
+        <p class="card-text">Location {{post.lat}} {{post.lng}}</p>
+    </div>
+    <p *ngFor="let index of post.images;index as i">
+        <img class="card-img-top" src="{{IMAGE_URI}}/{{index}}" alt="Card image" width="500" height="500" [ngStyle]="{'z-index':{i}}">
+    </p>
+    <hr><hr><hr>
+</div>
